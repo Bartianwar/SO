@@ -1,0 +1,8 @@
+Funciones mkdir, creat, open, read and write son las que vamos a usar
+
+readdir se usara para ver todos los archivos de un directorios
+scandir tambien funciona para este proposito, pero hay que liberar memoria.
+Un lata, basicamente
+
+https://stackoverflow.com/questions/22886290/c-get-all-files-with-certain-extension
+Para que lea solo los archivos con las extensiones .txt
