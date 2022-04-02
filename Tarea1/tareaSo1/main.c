@@ -23,18 +23,20 @@ int main(){
                     continue;
                 else{
                     if (strcmp(ext, ".txt") == 0 && !strstr(entry->d_name, "\\")){      //Terrible solucion, pero funciona. Se fija si la extension del archivo es de tipo txt
-                        //printf("%s\n", entry->d_name);                                  //(Si un archivo tiene "\" en el nombre, cagamos. Pero son nombres de mascota asique....)                   
-                        int fd = open(entry->d_name, O_RDONLY | O_EXCL);
-                        char *tipo_animal = (char *)calloc(1, sizeof(char));
-                        char *buffer_nom = (char *)malloc(sizeof(char)*255);
-                        while(tipo_animal != "\n"){
+                        printf("%s\n", entry->d_name);                                  //(Si un archivo tiene "\" en el nombre, cagamos. Pero son nombres de mascota asique....)                   
+                        /*
+                        int fd = open(entry->d_name, O_RDONLY | O_EXCL);                //Hasta ahora, he accedido al loop, leido el nombre de cada uno de los archivos e imprimi el nombre de cada uno por pantalla 
+                        char *tipo_animal = (char *)calloc(1, sizeof(char));            //En este loop se puede acceder tambien a la informacion dentro de cada uno de los archivos, por lo que no deberia se tan
+                        char *buffer_nom = (char *)malloc(sizeof(char)*255);            //complejo accder a que tipo de animal son y el estado en el que se encuentran. Me imagino que la mejor forma de hacerlo
+                        while(tipo_animal != "\n"){                                     //sera leer por byte hasta encontrar un cambio de linea o algo por el estilo.
                             read(fd, tipo_animal, 1);
 
-                            printf("%d",i);
-                        }
+                            printf("%d",i);                                             //Este comentario de codigo grande es un intento de solucion para leer la primera linea del archivo, el cual es el nombre de la mascota
+                        }                                                               //Probablemente deberiamos intentar crear una funcion estilo "leerLinea(str nombreArchivo, int lineaQueSe);" para poder usarla de manera mas generia
                         printf("%s \n", tipo_animal);
                         free(tipo_animal);
                         close(fd);
+                        */
                         
                     }
                 }    
